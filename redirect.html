@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirigiendo...</title>
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const targetUrl = params.get('url');
+            if (targetUrl) {
+                window.location.href = decodeURIComponent(targetUrl);
+            } else {
+                document.body.innerHTML = "<h3>No se ha especificado ninguna URL de destino.</h3>";
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <p>Cargando documentación en el navegador, por favor espere...</p>
+</body>
+</html>
